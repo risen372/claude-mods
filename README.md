@@ -20,6 +20,7 @@ Answer `y` to add the marketplace, then choose a scope. Replace `<mod>` with any
 | `idea-shelf` | Shelve side ideas while Claude works (`/idea <text>`), then send them with one click. |
 | `prompt-enhancer` | Band above the prompt with Enhance and Send buttons: rewrites a vague prompt using the project's CLAUDE.md and installed skills. |
 | `session-monitor` | A side pane (`/sessions`) listing every active Claude session as working, needs you, or done. |
+| `status-band` | Stage card above the prompt while Claude works: current action, an estimated progress bar, elapsed time, and a Read / Plan / Edit / Test / Done trail. |
 
 The install command is only available in a terminal session, not the desktop app's Code tab. A mod installed from a terminal at user scope also loads in the desktop app.
 

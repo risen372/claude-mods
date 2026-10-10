@@ -8,6 +8,7 @@
     { "name": "human-voice", "source": "./human-voice" },
     { "name": "idea-shelf", "source": "./idea-shelf" },
     { "name": "prompt-enhancer", "source": "./prompt-enhancer" },
-    { "name": "session-monitor", "source": "./session-monitor" }
+    { "name": "session-monitor", "source": "./session-monitor" },
+    { "name": "status-band", "source": "./status-band" }
   ]
 }
