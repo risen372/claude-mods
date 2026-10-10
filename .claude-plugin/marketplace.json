@@ -1,0 +1,13 @@
+{
+  "name": "risen372-mods",
+  "owner": { "name": "risen372" },
+  "description": "Claude Code mods by risen372",
+  "plugins": [
+    { "name": "assumption-tracker", "source": "./assumption-tracker" },
+    { "name": "design-direction", "source": "./design-direction" },
+    { "name": "human-voice", "source": "./human-voice" },
+    { "name": "idea-shelf", "source": "./idea-shelf" },
+    { "name": "prompt-enhancer", "source": "./prompt-enhancer" },
+    { "name": "session-monitor", "source": "./session-monitor" }
+  ]
+}

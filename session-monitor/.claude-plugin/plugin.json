@@ -1,0 +1,10 @@
+{
+  "name": "session-monitor",
+  "version": "0.1.0",
+  "description": "A side pane listing every active Claude session as working, needs you, or done, with a count header.",
+  "types": "./types/index.d.ts",
+  "author": {
+    "name": "risen372"
+  },
+  "repository": "https://github.com/risen372/claude-mods"
+}

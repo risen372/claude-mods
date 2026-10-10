@@ -1,0 +1,9 @@
+{
+  "name": "design-direction",
+  "version": "0.1.0",
+  "description": "When Claude asks for design direction, renders each option as a visual mockup in a browser gallery so you can pick by sight.",
+  "author": {
+    "name": "risen372"
+  },
+  "repository": "https://github.com/risen372/claude-mods"
+}

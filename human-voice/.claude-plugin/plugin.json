@@ -1,0 +1,9 @@
+{
+  "name": "human-voice",
+  "version": "0.1.0",
+  "description": "Steers wording toward a natural human voice and double-checks every answer for obvious AI tells.",
+  "author": {
+    "name": "risen372"
+  },
+  "repository": "https://github.com/risen372/claude-mods"
+}
