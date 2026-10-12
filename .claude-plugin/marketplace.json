@@ -1,15 +1,15 @@
 {
   "name": "risen372-mods",
-  "owner": { "name": "risen372" },
+  "owner": {"name": "risen372"},
   "description": "Claude Code mods by risen372",
   "plugins": [
-    { "name": "assumption-tracker", "source": "./assumption-tracker" },
-    { "name": "design-direction", "source": "./design-direction" },
-    { "name": "human-voice", "source": "./human-voice" },
-    { "name": "idea-shelf", "source": "./idea-shelf" },
-    { "name": "prompt-button", "source": "./prompt-button" },
-    { "name": "prompt-enhancer", "source": "./prompt-enhancer" },
-    { "name": "session-monitor", "source": "./session-monitor" },
-    { "name": "status-band", "source": "./status-band" }
+    {"name": "assumption-tracker", "source": "./assumption-tracker", "category": "Risen Mods", "tags": ["Risen Mods"]},
+    {"name": "design-direction", "source": "./design-direction", "category": "Risen Mods", "tags": ["Risen Mods"]},
+    {"name": "human-voice", "source": "./human-voice", "category": "Risen Mods", "tags": ["Risen Mods"]},
+    {"name": "idea-shelf", "source": "./idea-shelf", "category": "Risen Mods", "tags": ["Risen Mods"]},
+    {"name": "prompt-button", "source": "./prompt-button", "category": "Risen Mods", "tags": ["Risen Mods"]},
+    {"name": "prompt-enhancer", "source": "./prompt-enhancer", "category": "Risen Mods", "tags": ["Risen Mods"]},
+    {"name": "session-monitor", "source": "./session-monitor", "category": "Risen Mods", "tags": ["Risen Mods"]},
+    {"name": "status-band", "source": "./status-band", "category": "Risen Mods", "tags": ["Risen Mods"]}
   ]
 }
