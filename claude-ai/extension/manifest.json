@@ -1,0 +1,16 @@
+{
+  "manifest_version": 3,
+  "name": "Risen Mods for Claude.ai",
+  "version": "0.1.0",
+  "description": "Prompt button, prompt enhancer, idea shelf, status band and sessions pane for claude.ai chat.",
+  "permissions": ["storage"],
+  "background": { "service_worker": "background.js" },
+  "content_scripts": [
+    {
+      "matches": ["https://claude.ai/*"],
+      "js": ["content.js"],
+      "css": ["content.css"],
+      "run_at": "document_idle"
+    }
+  ]
+}

@@ -33,3 +33,7 @@ claude --plugin-dir ./<mod>
 claude plugin validate ./<mod>
 claude plugin test ./<mod>
 ```
+
+## Claude.ai versions
+
+Claude.ai chat has no mod system, so [`claude-ai/`](claude-ai) rebuilds the mods as a Chrome extension (prompt button, enhancer, idea shelf, status band, sessions pane) plus pasteable instructions (human-voice, design-direction, assumption-tracker). See [`claude-ai/README.md`](claude-ai/README.md) for install steps.

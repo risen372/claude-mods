@@ -1,0 +1,234 @@
+.cm-root,
+.cm-sesswrap {
+  --cm-fg: #1f1e1d;
+  --cm-dim: #6b6a68;
+  --cm-line: #d9d6cc;
+  --cm-card: #ffffff;
+  --cm-soft: #f3f1ea;
+  --cm-accent: #c96442;
+  --cm-ok: #2f7d4f;
+  --cm-warn: #a8691a;
+  font: 13px/1.4 system-ui, -apple-system, 'Segoe UI', sans-serif;
+  color: var(--cm-fg);
+  box-sizing: border-box;
+}
+html[data-mode='dark'] .cm-root,
+html[data-mode='dark'] .cm-sesswrap,
+html.dark .cm-root,
+html.dark .cm-sesswrap {
+  --cm-fg: #ece9e1;
+  --cm-dim: #a09d94;
+  --cm-line: #4a4741;
+  --cm-card: #2b2a27;
+  --cm-soft: #353330;
+  --cm-accent: #e08a6a;
+  --cm-ok: #6cc08b;
+  --cm-warn: #e0b36a;
+}
+@media (prefers-color-scheme: dark) {
+  html:not([data-mode]):not(.light) .cm-root,
+  html:not([data-mode]):not(.light) .cm-sesswrap {
+    --cm-fg: #ece9e1;
+    --cm-dim: #a09d94;
+    --cm-line: #4a4741;
+    --cm-card: #2b2a27;
+    --cm-soft: #353330;
+    --cm-accent: #e08a6a;
+    --cm-ok: #6cc08b;
+    --cm-warn: #e0b36a;
+  }
+}
+
+.cm-hidden {
+  display: none !important;
+}
+.cm-dim {
+  color: var(--cm-dim);
+}
+.cm-text {
+  flex: 1;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+/* band above the prompt */
+.cm-root {
+  width: 100%;
+  max-width: 46rem;
+  margin: 0 auto 8px;
+  padding: 0 4px;
+}
+.cm-tools {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+.cm-note {
+  margin-left: 4px;
+}
+.cm-btn {
+  font: inherit;
+  color: var(--cm-fg);
+  background: var(--cm-card);
+  border: 1px solid var(--cm-line);
+  border-radius: 8px;
+  padding: 4px 10px;
+  cursor: pointer;
+}
+.cm-btn:hover {
+  background: var(--cm-soft);
+}
+.cm-btn.cm-primary {
+  border-color: var(--cm-accent);
+  color: var(--cm-accent);
+}
+.cm-panel {
+  margin-top: 6px;
+  padding: 8px;
+  background: var(--cm-card);
+  border: 1px solid var(--cm-line);
+  border-radius: 10px;
+}
+.cm-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  margin: 4px 0;
+}
+.cm-input {
+  flex: 1;
+  font: inherit;
+  color: var(--cm-fg);
+  background: var(--cm-soft);
+  border: 1px solid var(--cm-line);
+  border-radius: 8px;
+  padding: 5px 8px;
+  box-sizing: border-box;
+  width: 100%;
+}
+.cm-area {
+  resize: vertical;
+  margin-top: 4px;
+}
+
+/* status band */
+.cm-status {
+  margin-bottom: 6px;
+  padding: 8px 10px;
+  background: var(--cm-card);
+  border: 1px solid var(--cm-accent);
+  border-radius: 10px;
+}
+.cm-status.cm-done {
+  border-color: var(--cm-ok);
+}
+.cm-status-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+.cm-bar {
+  height: 6px;
+  margin: 6px 0;
+  background: var(--cm-soft);
+  border-radius: 3px;
+  overflow: hidden;
+}
+.cm-fill {
+  height: 100%;
+  background: var(--cm-accent);
+  transition: width 0.4s;
+}
+.cm-done .cm-fill {
+  background: var(--cm-ok);
+}
+.cm-steps {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  color: var(--cm-dim);
+}
+.cm-step.cm-ok {
+  color: var(--cm-ok);
+}
+.cm-step.cm-now {
+  color: var(--cm-fg);
+  font-weight: 600;
+  background: var(--cm-soft);
+  border-radius: 4px;
+  padding: 0 6px;
+}
+.cm-chip {
+  margin-left: auto;
+  color: var(--cm-warn);
+  cursor: help;
+}
+
+/* sessions pane */
+.cm-sesswrap {
+  position: fixed;
+  right: 12px;
+  bottom: 12px;
+  z-index: 2147483000;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+}
+.cm-pill {
+  font: inherit;
+  color: var(--cm-fg);
+  background: var(--cm-card);
+  border: 1px solid var(--cm-line);
+  border-radius: 999px;
+  padding: 4px 12px;
+  cursor: pointer;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.15);
+}
+.cm-sess {
+  width: min(360px, calc(100vw - 24px));
+  max-height: 50vh;
+  overflow: auto;
+  padding: 8px;
+  background: var(--cm-card);
+  border: 1px solid var(--cm-line);
+  border-radius: 12px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.2);
+}
+.cm-sess-head {
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+.cm-sess-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  font: inherit;
+  text-align: left;
+  color: var(--cm-fg);
+  background: none;
+  border: 0;
+  border-radius: 8px;
+  padding: 5px 6px;
+  cursor: pointer;
+}
+.cm-sess-row:hover {
+  background: var(--cm-soft);
+}
+.cm-sess-row.cm-working > span:first-child {
+  color: var(--cm-accent);
+}
+.cm-sess-row.cm-ready > span:first-child {
+  color: var(--cm-ok);
+}
+.cm-sess-hide {
+  font: inherit;
+  margin-top: 6px;
+  color: var(--cm-dim);
+  background: none;
+  border: 0;
+  cursor: pointer;
+  padding: 2px 6px;
+}
