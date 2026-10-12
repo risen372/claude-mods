@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "Claude Folders",
+  "version": "0.1.0",
+  "description": "Folders, pins and a home screen merged into the claude.ai sidebar, with a one-click Classic switch.",
+  "permissions": ["storage"],
+  "content_scripts": [
+    {
+      "matches": ["https://claude.ai/*"],
+      "js": ["content.js"],
+      "css": ["content.css"],
+      "run_at": "document_idle"
+    }
+  ]
+}
