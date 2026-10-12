@@ -1,1 +1,1 @@
-{ "name": "prompt-button", "version": "0.1.0", "description": "Adds a Generate prompt button above the prompt box that rewrites your draft into an optimized AI prompt.", "types": "./types/index.d.ts" }
+{ "name": "prompt-button", "version": "0.1.0", "description": "Adds a Generate prompt button above the prompt box that rewrites your draft into an optimized AI prompt." }

@@ -2,7 +2,6 @@
   "name": "prompt-enhancer",
   "version": "0.1.0",
   "description": "Band above the prompt with Enhance and Send buttons: rewrites a vague prompt using the project's CLAUDE.md and installed skills, then sends it on demand.",
-  "types": "./types/index.d.ts",
   "author": {
     "name": "risen372"
   },

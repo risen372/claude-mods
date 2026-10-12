@@ -2,7 +2,6 @@
   "name": "assumption-tracker",
   "version": "0.1.0",
   "description": "Claude logs the assumptions it makes mid-build; a band above the prompt expands into a list where you mark each Right or Wrong.",
-  "types": "./types/index.d.ts",
   "author": {
     "name": "risen372"
   },

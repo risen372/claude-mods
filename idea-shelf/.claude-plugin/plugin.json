@@ -2,7 +2,6 @@
   "name": "idea-shelf",
   "version": "0.1.0",
   "description": "Shelve side ideas while Claude works, then send them with one click when you are ready.",
-  "types": "./types/index.d.ts",
   "author": {
     "name": "risen372"
   },
