@@ -16,6 +16,7 @@ Answer `y` to add the marketplace, then choose a scope. Replace `<mod>` with any
 | Mod | What it does |
 | --- | --- |
 | `assumption-tracker` | Claude logs the assumptions it makes mid-build; a band above the prompt expands into a list where you mark each Right or Wrong. |
+| `conversation-folders` | Folders, pins and a home screen for your conversations, in a docked pane with a Classic switch to go back. |
 | `design-direction` | When Claude asks for design direction, renders each option as a visual mockup in a browser gallery so you can pick by sight. |
 | `human-voice` | Steers wording toward a natural human voice and double-checks every answer for obvious AI tells. |
 | `idea-shelf` | Shelve side ideas while Claude works (`/idea <text>`), then send them with one click. |
@@ -37,3 +38,5 @@ claude plugin test ./<mod>
 ## Claude.ai versions
 
 Claude.ai chat has no mod system, so [`claude-ai/`](claude-ai) rebuilds the mods as a Chrome extension (prompt button, enhancer, idea shelf, status band, sessions pane) plus pasteable instructions (human-voice, design-direction, assumption-tracker). See [`claude-ai/README.md`](claude-ai/README.md) for install steps.
+
+[`claude-folders-extension/`](claude-folders-extension) is the Chrome extension version of conversation-folders: a Folders section in the claude.ai sidebar. See its README for install steps.

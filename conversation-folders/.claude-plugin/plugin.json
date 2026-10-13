@@ -2,5 +2,8 @@
   "name": "conversation-folders",
   "version": "0.1.0",
   "description": "Folders, pins and a home screen for your conversations, in a docked pane with a Classic switch.",
-  "types": "./types/index.d.ts"
+  "author": {
+    "name": "risen372"
+  },
+  "repository": "https://github.com/risen372/claude-mods"
 }

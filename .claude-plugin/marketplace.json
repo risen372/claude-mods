@@ -4,6 +4,7 @@
   "description": "Claude Code mods by risen372",
   "plugins": [
     {"name": "assumption-tracker", "source": "./assumption-tracker", "category": "Risen Mods", "tags": ["Risen Mods"]},
+    {"name": "conversation-folders", "source": "./conversation-folders", "category": "Risen Mods", "tags": ["Risen Mods"]},
     {"name": "design-direction", "source": "./design-direction", "category": "Risen Mods", "tags": ["Risen Mods"]},
     {"name": "human-voice", "source": "./human-voice", "category": "Risen Mods", "tags": ["Risen Mods"]},
     {"name": "idea-shelf", "source": "./idea-shelf", "category": "Risen Mods", "tags": ["Risen Mods"]},
