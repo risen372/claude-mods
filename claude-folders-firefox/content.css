@@ -1,0 +1,77 @@
+/* Claude Folders. Uses the site's own CSS variables so it follows light/dark. */
+#cf-root, #cf-home, .cf-menu {
+  --cf-line: color-mix(in srgb, currentColor 16%, transparent);
+  --cf-dim: color-mix(in srgb, currentColor 62%, transparent);
+  --cf-hover: var(--df-hover, color-mix(in srgb, currentColor 10%, transparent));
+  --cf-radius: var(--df-radius-pill, 8px);
+  font-size: var(--df-row-font, 13px);
+  line-height: 1.35;
+}
+#cf-root { display: flex; flex-direction: column; gap: 2px; padding: 6px 0 8px; }
+#cf-root button, #cf-home button, .cf-menu button {
+  font: inherit; color: inherit; background: none; border: 0; cursor: pointer; text-align: left;
+}
+#cf-root input, #cf-home input, .cf-menu input {
+  font: inherit; color: inherit; background: transparent; border: 1px solid var(--cf-line);
+  border-radius: var(--cf-radius); padding: 5px 8px; width: 100%; box-sizing: border-box; outline: none;
+}
+#cf-root input:focus, #cf-home input:focus, .cf-menu input:focus { border-color: var(--cf-dim); }
+.cf-head { display: flex; align-items: center; gap: 4px; padding: 2px 6px 4px; }
+.cf-head .cf-title { flex: 1; font-size: 11px; letter-spacing: .06em; color: var(--cf-dim); }
+.cf-pill { border: 1px solid var(--cf-line) !important; border-radius: 999px; padding: 2px 9px; font-size: 11px; }
+.cf-pill:hover, .cf-icon:hover, .cf-row:hover { background: var(--cf-hover) !important; }
+.cf-icon { width: 22px; height: 22px; display: inline-flex; align-items: center; justify-content: center; border-radius: 6px; color: var(--cf-dim); flex: none; }
+.cf-icon:hover { color: inherit; }
+.cf-label { padding: 6px 8px 2px; font-size: 11px; letter-spacing: .06em; color: var(--cf-dim); }
+.cf-row { display: flex; align-items: center; gap: 8px; padding: 5px 8px; border-radius: var(--cf-radius); text-decoration: none; color: inherit; min-height: 28px; box-sizing: border-box; cursor: pointer; }
+.cf-row .cf-name { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.cf-row .cf-count { font-size: 11px; color: var(--cf-dim); font-variant-numeric: tabular-nums; }
+.cf-row .cf-acts { display: none; gap: 0; }
+.cf-row:hover .cf-acts { display: inline-flex; }
+.cf-row:hover .cf-count { display: none; }
+.cf-dot { width: 9px; height: 9px; border-radius: 3px; flex: none; }
+.cf-chev { width: 10px; flex: none; color: var(--cf-dim); transition: transform .12s; }
+.cf-chev.cf-open { transform: rotate(90deg); }
+.cf-child { padding-left: 26px; color: var(--cf-dim); }
+.cf-child:hover { color: inherit; }
+.cf-current { border: 1px dashed var(--cf-line); border-radius: var(--cf-radius); margin: 2px 0 4px; }
+.cf-empty { padding: 4px 8px; color: var(--cf-dim); }
+.cf-sep { height: 1px; background: var(--cf-line); margin: 6px 4px; }
+
+/* per-row "move to folder" button inside the native Recents list */
+.cf-file { position: absolute; right: 34px; top: 50%; transform: translateY(-50%); width: 22px; height: 22px;
+  display: none; align-items: center; justify-content: center; border-radius: 6px; border: 0; background: none;
+  color: inherit; cursor: pointer; opacity: .7; z-index: 2; }
+.group:hover > .cf-file, .group:hover .cf-file { display: inline-flex; }
+.cf-file:hover { opacity: 1; background: var(--df-hover, rgba(128,128,128,.2)); }
+[data-cf-hidden] { display: none !important; }
+html.cf-classic .cf-file { display: none !important; }
+
+/* popover menu */
+.cf-menu { position: fixed; z-index: 2147483000; min-width: 210px; max-width: 280px; padding: 6px; border-radius: 10px;
+  background: var(--bg-000, Canvas); color: var(--text-100, CanvasText); border: 1px solid var(--cf-line);
+  box-shadow: 0 10px 30px rgba(0,0,0,.35); display: flex; flex-direction: column; gap: 1px; }
+.cf-menu .cf-row { cursor: pointer; }
+
+/* home screen */
+#cf-home { position: fixed; top: 0; right: 0; bottom: 0; z-index: 40; overflow: auto; padding: 28px 40px 48px; box-sizing: border-box; color: inherit; }
+#cf-home .cf-bar { display: flex; align-items: center; gap: 10px; margin-bottom: 22px; flex-wrap: wrap; }
+#cf-home h1 { font-size: 20px; font-weight: 600; margin: 0; flex: 1; min-width: 160px; }
+#cf-home .cf-search { max-width: 260px; }
+#cf-home .cf-solid { background: var(--accent-main-100, #c96442) !important; color: #fff !important; border-radius: var(--cf-radius); padding: 7px 14px; font-weight: 600; }
+#cf-home .cf-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; margin-bottom: 26px; }
+#cf-home .cf-card { border: 1px solid var(--cf-line); border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; cursor: pointer; text-align: left; }
+#cf-home .cf-card:hover { background: var(--cf-hover); }
+#cf-home .cf-card .cf-bandc { height: 3px; }
+#cf-home .cf-card .cf-body { padding: 12px 14px; display: flex; flex-direction: column; gap: 6px; }
+#cf-home .cf-card .cf-top { display: flex; gap: 8px; align-items: baseline; }
+#cf-home .cf-card .cf-name { font-weight: 600; flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+#cf-home .cf-card .cf-peek { color: var(--cf-dim); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+#cf-home .cf-chip { font-size: 11px; border: 1px solid var(--cf-line); border-radius: 999px; padding: 1px 9px; color: var(--cf-dim); }
+#cf-home .cf-list { display: flex; flex-direction: column; gap: 6px; max-width: 760px; }
+#cf-home .cf-list .cf-row { border: 1px solid var(--cf-line); }
+#cf-home h2 { font-size: 11px; letter-spacing: .06em; color: var(--cf-dim); font-weight: 500; margin: 0 0 10px; }
+
+/* fallback launcher if the sidebar can't be found */
+#cf-float { position: fixed; left: 12px; bottom: 56px; z-index: 41; border: 1px solid var(--cf-line) !important;
+  border-radius: 999px; padding: 6px 12px; background: var(--bg-000, Canvas) !important; color: var(--text-100, CanvasText) !important; cursor: pointer; font-size: 12px; }

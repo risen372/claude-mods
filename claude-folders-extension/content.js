@@ -3,6 +3,7 @@
   if (window.__claudeFolders) return;
   window.__claudeFolders = true;
 
+  const ext = typeof browser !== 'undefined' && browser.storage ? browser : chrome; // Firefox | Chromium
   const KEY = 'cf_state_v1';
   const COLORS = ['#5BB5A2', '#E0A458', '#A58BE0', '#E5817A', '#6FA8E8', '#9AA37A'];
   const SELF = '#cf-root,#cf-home,.cf-menu,#cf-float';
@@ -49,7 +50,8 @@
     s.setAttribute('height', size);
     s.setAttribute('aria-hidden', 'true');
     if (cls) s.setAttribute('class', cls);
-    s.innerHTML = ICON[name]; // static strings only
+    const doc = new DOMParser().parseFromString('<svg xmlns="http://www.w3.org/2000/svg">' + ICON[name] + '</svg>', 'image/svg+xml');
+    for (const p of [...doc.documentElement.children]) s.append(document.importNode(p, true)); // static strings only
     return s;
   }
   const iconBtn = (name, label, onClick) =>
@@ -60,7 +62,7 @@
   function save() {
     clearTimeout(saveT);
     saveT = setTimeout(() => {
-      try { chrome.storage.local.set({ [KEY]: S }); } catch (_) { /* extension reloaded */ }
+      try { Promise.resolve(ext.storage.local.set({ [KEY]: S })).catch(() => {}); } catch (_) { /* extension reloaded */ }
     }, 150);
   }
   const uid = () => 'f' + Date.now().toString(36) + Math.random().toString(36).slice(2, 5);
@@ -405,11 +407,11 @@
   addEventListener('resize', () => { if (homeOpen) renderHome(); });
 
   try {
-    chrome.storage.local.get(KEY, (r) => {
+    Promise.resolve(ext.storage.local.get(KEY)).then((r) => {
       if (r && r[KEY]) S = Object.assign(S, r[KEY]);
       refresh();
-    });
-    chrome.storage.onChanged.addListener((ch, area) => {
+    }, () => refresh());
+    ext.storage.onChanged.addListener((ch, area) => {
       if (area !== 'local' || !ch[KEY] || !ch[KEY].newValue) return;
       if (JSON.stringify(ch[KEY].newValue) === JSON.stringify(S)) return;
       S = Object.assign(S, ch[KEY].newValue);

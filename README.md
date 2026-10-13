@@ -40,3 +40,5 @@ claude plugin test ./<mod>
 Claude.ai chat has no mod system, so [`claude-ai/`](claude-ai) rebuilds the mods as a Chrome extension (prompt button, enhancer, idea shelf, status band, sessions pane) plus pasteable instructions (human-voice, design-direction, assumption-tracker). See [`claude-ai/README.md`](claude-ai/README.md) for install steps.
 
 [`claude-folders-extension/`](claude-folders-extension) is the Chrome extension version of conversation-folders: a Folders section in the claude.ai sidebar. See its README for install steps.
+
+[`claude-folders-firefox/`](claude-folders-firefox) is the same Folders extension for Firefox. See its README for install steps.
